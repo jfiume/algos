@@ -1,0 +1,78 @@
+# replace all spaces with %20
+def replace(str)
+  str.split(' ').join('%20')
+end
+
+# 2 strings are anagrams
+# 1st way to do it
+def anagrams?(str1, str2)
+  str1.chars.sort == str2.chars.sort
+end
+
+# 2nd way to do it
+def anagrams?(str1, str2)
+  str1.chars.all? do |letter|
+  str2.chars.include?(letter)
+end
+
+# Remove string dups without an additional buffer
+def remove_dups(str)
+  res = ''
+  dups = ''
+  i = 0
+  while i < str.length
+    j = i + 1
+    while j < str.length
+      dups << str[i] if str[i] == str[j]
+      res << str[i] if str[i] == str[j]
+      j += 1
+    end
+    res << str[i] unless dups.include?(str[i])
+    i += 1
+    end
+    
+  res
+end
+
+# Reverse a string
+# transverse the whole string method
+def my_reverse(str)
+  res = ''
+  str.each_char do |letter|
+    res.shift(letter)
+  end
+  
+  res
+end
+
+# in place method
+def my_reverse(str)
+  i = 0
+  j = 0
+  
+  while i < j
+    str[i], str[j] = str[j], str[i]
+    i += 1
+    j -= 1
+  end
+  
+  str
+end
+
+# check for all uniques
+def uniques?(str)
+  alpha = ('a'..'z').to_a
+  str.each_char do |letter|
+    return false unless alpha.delete(letter)
+end
+  
+  true
+end
+
+def uniques?(str)
+  alpha = Hash.new(0)
+  str.each_char do |letter|
+    alpha[letter] += 1
+  end
+  alpha.values.none? { |v| v > 1 }
+end
