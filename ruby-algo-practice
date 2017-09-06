@@ -76,3 +76,10 @@ def uniques?(str)
   end
   alpha.values.none? { |v| v > 1 }
 end
+
+# Assume you have a method isSubstring which checks if one word is a substring of another. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using only one call to isSubstring (i.e., “waterbottle” is a rotation of “erbottlewat”).
+
+def is_substring?(str1, str2)
+  return false unless str1.length == str2.length
+  (str2 + str2).include?(str1)
+end
