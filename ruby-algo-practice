@@ -83,3 +83,23 @@ def is_substring?(str1, str2)
   return false unless str1.length == str2.length
   (str2 + str2).include?(str1)
 end
+
+# nth to last element in a singly linked list
+def nth_to_last(head, n)
+  return nil if head.nil? || n < 1
+  p1 = head
+  p2 = head
+  i = 0
+  
+  while i < n - 1
+    return nil if p2.nil?
+    p2 = p2.next
+  end
+  
+  while p2.next
+    p1 = p1.next
+    p2 = p2.next
+  end
+  
+  p1
+end
