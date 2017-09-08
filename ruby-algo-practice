@@ -103,3 +103,25 @@ def nth_to_last(head, n)
   
   p1
 end
+
+def delete_dupes(head)
+  return nil if head.nil?
+  
+  previous = head
+  current = previous.next
+  while current
+    runner = head
+    while runner != current
+      if runner.val == current.val
+        tmp = current.next
+        previous.next = tmp
+        current = tmp
+       end
+       if runner == current
+        previous = current
+        current = current.next
+       end
+    end
+  end
+end
+  
