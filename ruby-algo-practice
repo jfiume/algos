@@ -93,6 +93,27 @@ def rotate_arr(a)
     res
 end
 
+# find 1st duplicate of an array
+def firstDuplicate(a)
+    dups = Hash.new(0)
+    idx = Hash.new
+    index = a.length
+    
+    a.each_with_index do |el, i|
+       dups[el] += 1
+        idx[el] = i unless dups[el] > 2
+    end
+    
+    return -1 unless dups.values.any? {|val| val > 1}
+    
+    dup_vals = dups.map {|k, v| k if v > 1}.compact
+    dup_vals.each do |el|
+       index = idx[el] if idx[el] < index
+    end
+    
+    a[index]
+end
+
 # nth to last element in a singly linked list
 def nth_to_last(head, n)
   return nil if head.nil? || n < 1
