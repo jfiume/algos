@@ -84,6 +84,15 @@ def is_substring?(str1, str2)
   (str2 + str2).include?(str1)
 end
 
+# rotate array by 90 degrees
+def rotate_arr(a)
+    res = []
+    a.transpose.each do |row|
+        res << row.reverse
+    end
+    res
+end
+
 # nth to last element in a singly linked list
 def nth_to_last(head, n)
   return nil if head.nil? || n < 1
