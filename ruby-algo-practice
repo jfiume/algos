@@ -134,6 +134,7 @@ def nth_to_last(head, n)
   p1
 end
 
+# delete duplicates in a singly linked list
 def delete_dupes(head)
   return nil if head.nil?
   
