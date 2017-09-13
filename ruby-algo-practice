@@ -114,7 +114,7 @@ def firstDuplicate(a)
     a[index]
 end
 
-# nth to last element in a singly linked list
+# find the nth to last element in a singly linked list
 def nth_to_last(head, n)
   return nil if head.nil? || n < 1
   p1 = head
