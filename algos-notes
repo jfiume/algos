@@ -1,0 +1,33 @@
+# mth to last element in a linked list
+# use 2 pointers one at the beginning and one m-distance away from the beginning. then loop through the next pointer
+
+# flatten a linked-list
+# start at the beginning of the first level
+# while you are not at the end of the first level
+  # if the current node has a child
+    # Append the child to the end of the first level
+    # update the tail pointer
+  # advance to the next node
+  
+# unflatten the list
+# Explore path:
+  # While not at the end
+    # If current node has a child
+      # Separate the child from its previous node
+      # Explore path beginning with the child
+     # Go onto the next node
+     
+ # Write a function that takes a pointer to the head of a list and determines if the list is cyclic or acyclic.
+ # Your function should return 0 if the list is acyclic and 1 if it is cyclic. Do not modify the list
+ # In the acyclic list, the faster pointer will reach the end. In the cyclic list they will both loop endlessly.
+ # The faster pointer will eventually catch up with and pass the slower pointer. If the fast pointer ever passes the slower pointer, you have a cyclic list.
+ 
+ 
+ # Start two pointers at the head of the list
+ # Loop infinetly
+  # if the fast pointer reachcher the end
+    # Return that the list is acyclic
+   # If the fast pointer moves onto or over the slow pointer
+    # Return that there is a cycle
+   # Advance the slow pointer one node
+   # Advance the fast pointer two nodes
