@@ -7,7 +7,7 @@
   # if the current node has a child
     # Append the child to the end of the first level
     # update the tail pointer
-  # advance to the next node
+  # advance to the next node 
   
 # unflatten the list
 # Explore path:
