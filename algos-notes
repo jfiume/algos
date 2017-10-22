@@ -31,3 +31,7 @@
     # Return that there is a cycle
    # Advance the slow pointer one node
    # Advance the fast pointer two nodes
+
+
+# notes on differences between Ruby and Python
+  # Ruby has a handy initialize method. Python uses the oddly named __init__ to initialize new objects.
