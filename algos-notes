@@ -35,3 +35,4 @@
 
 # notes on differences between Ruby and Python
   # Ruby has a handy initialize method. Python uses the oddly named __init__ to initialize new objects.
+  # also Python doesn't have the handy enumerable methods that you find in Ruby. Python has while, for and unitl loops.
