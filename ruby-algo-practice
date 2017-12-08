@@ -171,3 +171,17 @@ end
 
 print is_palendrome?("aca")
 print is_palendrome?("baaa")
+
+Def longest_sunstring(str)
+  Sub_arr = [str[0]]
+  Longest = 0
+  Str[1..-1].each_char do |letter|
+     Unless sub_arr.include?(letter)
+         Sub_arr.push(letter)
+     Else
+          Longest = sub_arr.length if sur_arr.length > longest 
+           Sub_arr = [letter]
+      End
+   End
+  Longest
+End
