@@ -185,3 +185,16 @@ Def longest_sunstring(str)
    End
   Longest
 End
+
+def duplicates(arr)
+  counter_hash = Hash.new(0)
+  arr.each do |el|
+    counter_hash[el] += 1
+  end
+  
+  counter_hash.select { |key, value| value > 1 }.keys
+end 
+
+p duplicates([1, 2, 1, 3, 4, 2])
+p duplicates(["hi", "bye", "hi", "hello", "waaaazzzzupppp", "bye"])
+
