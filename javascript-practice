@@ -7,3 +7,6 @@ var a = (2, 3, 5); a === 5
     setTimeout(function(){console.log(3)}, 0); 
     console.log(4);
 })(); prints 1, 4, 3, 2
+
+definitions -
+shadow DOM element: provides encapsulation in DOM component and for CSS. Must always be attaced to an element.
