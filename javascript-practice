@@ -8,5 +8,26 @@ var a = (2, 3, 5); a === 5
     console.log(4);
 })(); prints 1, 4, 3, 2
 
+visibilty: none // element space is still there but is empty
+display: none // whole block disappears
+
 definitions -
 shadow DOM element: provides encapsulation in DOM component and for CSS. Must always be attaced to an element.
+continuous integration: practice of merging all developer work to a shared location multiple times a day.
+CDN - content delivery network - based on your location, sends data from the nearest server
+DNS - domain name server - name to ip address
+
+Events
+Event - onChange, onClick, onLoad, changing something
+Event Delegation - select parents, selects all children
+Event Handling - any event has a handler
+Event Capturing - select children, selects all parents but differenlty. starts with oldest parent down to child
+Event Bubbling - select children, selects all parents, starts with child then youngest parent
+Event Propagation - bubbling and capturing
+
+empty an array
+what happens when you type 'google.com' into your browser?
+
+var obj = {a:1, b:2};
+var obj2 = object.assign({}, obj);
+var obj3 = JSON.parse(JSON.stringify(obj));
