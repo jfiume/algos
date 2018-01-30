@@ -214,3 +214,29 @@ end
 puts longest_substring("abcabcbb") == 3
 puts longest_substring("bbbbb") == 1
 puts longest_substring("qwerqwe") == 4
+
+def nth_prime_R(n, num=1)
+  return num - 1 if n == 0
+  
+  if is_prime?(num)
+    nth_prime_R(n - 1, num += 1)
+  else
+    nth_prime_R(n, num += 1)
+  end
+end
+
+def is_prime?(num)
+  return false if num == 1
+  
+  (2...num).each do |el|
+    return false if num % el == 0
+  end
+  
+  true
+end
+
+puts nth_prime_R(1) == 2
+puts nth_prime_R(2) == 3
+puts nth_prime_R(3) == 5
+puts nth_prime_R(4) == 7
+puts nth_prime_R(5) == 11
