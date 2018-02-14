@@ -240,3 +240,27 @@ puts nth_prime_R(2) == 3
 puts nth_prime_R(3) == 5
 puts nth_prime_R(4) == 7
 puts nth_prime_R(5) == 11
+
+def sort(arr)
+  sorted_arr = []
+  
+  until arr.empty?
+    largest = arr[0]
+    largest_idx = 0
+    
+    arr.each_with_index do |el, idx|
+      if el > largest
+        largest = el
+        largest_idx = idx
+      end
+    end
+    
+    arr = arr[0...largest_idx] + arr[largest_idx + 1..-1]
+    sorted_arr.unshift(largest)
+  end
+  
+  sorted_arr
+end
+
+puts sort([5, 4, 3, 2, 1]) == [1,2,3,4,5]
+puts sort([5, 4, 3, 2, 1].shuffle) == [1,2,3,4,5]
