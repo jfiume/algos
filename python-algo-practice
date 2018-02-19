@@ -16,3 +16,28 @@ def print_list(head):
     print head.data
     head = head.next
   
+"""
+ Insert Node at the end of a linked list 
+ head pointer input could be None as well for empty list
+ Node is defined as
+ 
+ class Node(object):
+ 
+   def __init__(self, data=None, next_node=None):
+       self.data = data
+       self.next = next_node
+ 
+ return back the head of the linked list in the below method
+"""
+
+def Insert(head, data):
+    if head is None:
+        return Node(data, None)
+    else:
+        temp = head
+        while temp != None:
+            last_node = temp
+            temp = temp.next
+        insert_node = Node(data, None)
+        last_node.next = insert_node
+        return head
