@@ -71,3 +71,35 @@ def InsertNth(head, data, position):
             current_pos += 1
         prev_node.next = Node(data, next_node)
         return head
+
+"""
+ Delete Node at a given position in a linked list
+ Node is defined as
+ 
+ class Node(object):
+ 
+   def __init__(self, data=None, next_node=None):
+       self.data = data
+       self.next = next_node
+
+ return back the head of the linked list in the below method. 
+
+"""
+
+def Delete(head, position):
+    if head is None or position == 0:
+        return head.next
+    else:
+        current_node = 0
+        temp = head
+        prev_node = head
+        next_node = head.next
+        
+        while current_node != position:
+            prev_node = temp
+            temp = temp.next
+            next_node = temp.next
+            current_node += 1
+            
+        prev_node.next = next_node
+        return head
