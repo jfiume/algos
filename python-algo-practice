@@ -182,3 +182,32 @@ def Reverse(head):
             next_node.next = Node(node_list.pop(), None)
             next_node = next_node.next
         return new_head
+
+"""
+ Compare two linked list
+ head could be None as well for empty list
+ Node is defined as
+ 
+ class Node(object):
+ 
+   def __init__(self, data=None, next_node=None):
+       self.data = data
+       self.next = next_node
+
+ return back the head of the linked list in the below method.
+"""
+
+def CompareLists(headA, headB):
+    temp_a = headA
+    temp_b = headB
+    
+    while temp_a or temp_b:
+        if temp_a is None or temp_b is None:
+            return 0
+        if temp_a.data != temp_b.data:
+            return 0
+        else:
+            temp_a = temp_a.next
+            temp_b = temp_b.next
+    return 1
+  
