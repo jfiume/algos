@@ -145,3 +145,40 @@ def print_list(head):
     if head:
         print head.data
         print_list(head.next)
+
+"""
+ Reverse a linked list
+ head could be None as well for empty list
+ Node is defined as
+ 
+ class Node(object):
+ 
+   def __init__(self, data=None, next_node=None):
+       self.data = data
+       self.next = next_node
+
+ return back the head of the linked list in the below method.
+"""
+
+def Reverse(head):
+    node_list = [] 
+#     make a new stack
+    
+    if head is None or head.next is None:
+        return head
+#     can't reverse a null list
+    else:
+#         create the stack
+        temp = head
+        while temp:
+            node_list.append(temp.data)
+            temp = temp.next
+#     empty the stack
+        new_head = Node(node_list.pop(), None)
+        next_node = Node(node_list.pop(), None)
+        new_head.next = next_node
+        
+        while len(node_list) > 0:
+            next_node.next = Node(node_list.pop(), None)
+            next_node = next_node.next
+        return new_head
