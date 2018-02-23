@@ -281,4 +281,22 @@ def inOrder(root):
     else:
         return left_height
         
+ """
+Node is defined as
+self.left (the left child of the node)
+self.right (the right child of the node)
+self.data (the value of the node)
+"""
+def levelOrder(root):
+   #Write code Here
+    q = [root]
+    while len(q) > 0:
+        node = q.pop(0)
+        print node.data,
+        if node.left:
+            q.append(node.left)
+        if node.right:
+            q.append(node.right)
+ 
+ 
         
