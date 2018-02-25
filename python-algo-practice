@@ -351,3 +351,19 @@ n, k = map(int, raw_input().strip().split(' '))
 a = map(int, raw_input().strip().split(' '))
 answer = array_left_rotation(a, n, k);
 print ' '.join(map(str,answer))
+
+# is Binary Search Tree
+""" Node is defined as
+class node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+"""
+
+def checkBST(root, min=None, max=None):
+    if root is None:
+        return True
+    if (min and (min >= root.data)) or (max and (max <= root.data)):
+        return False
+    return checkBST(root.left, min, root.data) and checkBST(root.right, root.data, max)
