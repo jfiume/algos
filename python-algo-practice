@@ -338,3 +338,16 @@ for i in range(len(arr)-2):
         values.append(arr[i][j]+arr[i][j+1]+arr[i][j+2]+arr[i+1][j+1]+arr[i+2][j]+arr[i+2][j+1]+arr[i+2][j+2])
         
 print(max(values))
+
+# Arrays: Left Rotation
+def array_left_rotation(a, n, k):
+    while k > 0:
+        el = a.pop(0)
+        a.append(el)
+        k -= 1
+    return a
+
+n, k = map(int, raw_input().strip().split(' '))
+a = map(int, raw_input().strip().split(' '))
+answer = array_left_rotation(a, n, k);
+print ' '.join(map(str,answer))
