@@ -367,3 +367,16 @@ def checkBST(root, min=None, max=None):
     if (min and (min >= root.data)) or (max and (max <= root.data)):
         return False
     return checkBST(root.left, min, root.data) and checkBST(root.right, root.data, max)
+
+# Strings: Making Anagrams
+def number_needed(a, b):
+    for i in a:
+        if i in b:
+            b = b.replace(i, '', 1)
+            a = a.replace(i, '', 1)
+    return len(a) + len(b)
+
+a = raw_input().strip()
+b = raw_input().strip()
+
+print number_needed(a, b)
