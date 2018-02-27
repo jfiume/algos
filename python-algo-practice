@@ -405,3 +405,29 @@ if(answer):
     print "Yes"
 else:
     print "No
+   
+   
+"""
+Linked Lists: Detect a Cycle
+Detect a cycle in a linked list. Note that the head pointer may be 'None' if the list is empty.
+
+A Node is defined as: 
+ 
+    class Node(object):
+        def __init__(self, data = None, next_node = None):
+            self.data = data
+            self.next = next_node
+"""
+
+def has_cycle(head):
+    if head is None:
+        return False
+    temp = head
+    node_list = []
+    while temp:
+        if temp in node_list:
+            return True
+        node_list.append(temp)
+        temp = temp.next
+    return False
+    
