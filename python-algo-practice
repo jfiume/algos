@@ -380,3 +380,28 @@ a = raw_input().strip()
 b = raw_input().strip()
 
 print number_needed(a, b)
+
+# Hash Tables: Ransom Note
+from collections import defaultdict
+def ransom_note(magazine, ransom):
+    mag = defaultdict(lambda: 0)
+    ran = defaultdict(lambda: 0)
+    
+    for word in magazine:
+        mag[word] += 1
+    for word in ransom:
+        ran[word] += 1
+    
+    for word in ransom:
+        if mag[word] is None or mag[word] < ran[word]:
+            return False
+    return True
+
+m, n = map(int, raw_input().strip().split(' '))
+magazine = raw_input().strip().split(' ')
+ransom = raw_input().strip().split(' ')
+answer = ransom_note(magazine, ransom)
+if(answer):
+    print "Yes"
+else:
+    print "No
