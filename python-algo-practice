@@ -482,4 +482,27 @@ for line in xrange(t):
         queue.pop()
     else:
         print queue.peek()
+
+
+# Sorting: Bubble Sort
+n = int(raw_input().strip())
+a = map(int, raw_input().strip().split(' '))
+
+def bubble_sort(a):
+    swaps = 0
+    i = 0
+    while i < len(a):
+        j = i + 1
+        while j < len(a):
+            if a[i] > a[j]:
+                a[i], a[j] = a[j], a[i]
+                swaps += 1
+            j += 1
+        i += 1
+    return swaps
         
+swaps = bubble_sort(a)
+print "Array is sorted in %s swaps." % swaps
+print "First Element: %d" % a[0]
+print "Last Element: %d" % a[-1]
+
