@@ -264,3 +264,36 @@ end
 
 puts sort([5, 4, 3, 2, 1]) == [1,2,3,4,5]
 puts sort([5, 4, 3, 2, 1].shuffle) == [1,2,3,4,5]
+
+
+# version one of is valid ip
+def is_valid_ip?(str)
+  start_idx = 0
+  period_idx = 0
+  periods = 0
+  arr = []
+  
+  str.each_char.with_index do |char, idx|
+    next unless char == '.'
+    periods += 1
+    period_idx = idx
+    arr << str[start_idx...period_idx].to_i
+    start_idx = period_idx + 1
+  end
+  
+  arr << str[period_idx + 1..-1].to_i
+  return false unless periods == 3
+  arr.all? {|el| el >= 0 && el <= 255}
+end
+
+# version two of is valid ip
+def is_valid_ip?(str)
+  nums = str.split('.').map {|el| el.to_i}
+  nums.all? {|el| el >= 0 && el <= 255} &&
+  nums.length == 4
+end
+
+puts is_valid_ip?('0.0.0.0') == true
+puts is_valid_ip?('255.255.255.255') == true
+puts is_valid_ip?('256.255.255.255') == false
+puts is_valid_ip?('255.255.255') == false
