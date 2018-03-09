@@ -690,6 +690,39 @@ def GetNode(head, position, stack=[]):
   
   
   
+  # Delete duplicate-value nodes from a sorted linked list
+  """
+ Delete duplicate nodes
+ head could be None as well for empty list
+ Node is defined as
+ 
+ class Node(object):
+ 
+   def __init__(self, data=None, next_node=None):
+       self.data = data
+       self.next = next_node
+
+ return back the head of the linked list in the below method.
+"""
+
+def RemoveDuplicates(head):
+    if head is None:
+        return None
+    
+    seen = {head.data: True}
+    previous = head
+    temp = head.next
+    while temp:
+        if temp.data in seen:
+            previous.next = temp.next
+            temp = temp.next
+        else:
+            seen[temp.data] = True
+            previous = previous.next
+            temp = temp.next
+    return head
+        
+  
   
   
  
