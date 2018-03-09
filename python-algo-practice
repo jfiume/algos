@@ -611,3 +611,58 @@ for a0 in xrange(s):
     
     
     
+# Merge two sorted linked lists
+"""
+ Merge two linked lists
+ head could be None as well for empty list
+ Node is defined as
+ 
+ class Node(object):
+ 
+   def __init__(self, data=None, next_node=None):
+       self.data = data
+       self.next = next_node
+
+ return back the head of the linked list in the below method.
+"""
+def MergeLists(headA, headB):
+    if headA is None and headB is None:
+        return None
+    if headA is None:
+        return headB
+    if headB is None:
+        return headA
+    
+    tempA = headA
+    tempB = headB
+    if tempA.data < tempB.data:
+        new_head = tempA
+        tempA = tempA.next
+    else:
+        new_head = tempB
+        tempB = tempB.next
+        
+    new_list = new_head
+    while tempA or tempB:
+        if tempA is None:
+            new_list.next = tempB
+            tempB = tempB.next
+            new_list = new_list.next
+        elif tempB is None:
+            new_list.next = tempA
+            tempA = tempA.next
+            new_list = new_list.next
+        elif tempA.data < tempB.data:
+            new_list.next = tempA
+            tempA = tempA.next
+            new_list = new_list.next
+        elif tempA.data > tempB.data:
+            new_list.next = tempB
+            tempB = tempB.next
+            new_list = new_list.next
+    return new_head
+    
+
+
+  
+ 
