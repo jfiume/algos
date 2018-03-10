@@ -326,3 +326,41 @@ puts pair_sum([1,2,2,3], 4) == [[1,3], [2,2]]
 puts pair_sum([0,12,4,-2,6,5,5,10],10) == [[0, 10], [12, -2], [4, 6], [5,5]]
 puts pair_sum([1,2,3,4],8) == []
 
+
+# a key pad with buttons 0-9 is to be used to print out numbers. Print the steps the keypad has to take to get to each number.
+# numbers greater than 9 are to be broken down into digits.
+def keypad_print(arr, current_pos=0)
+  arr.each do |el|
+    if el > 9
+      current_pos = keypad_print(digitize(el), current_pos)
+    else
+      print_key(el, current_pos)
+      current_pos = el
+      puts "tap"
+    end
+  end
+  
+  current_pos
+end
+
+def digitize(num)
+  res_arr = []
+  while num > 9
+    res_arr.unshift(num % 10)
+    num /= 10
+  end
+  res_arr.unshift(num)
+  
+  res_arr
+end
+
+def print_key(key, current_pos)
+  value = key - current_pos
+  if value > 0
+    puts "right #{value}"
+  else
+    puts "left #{-value}"
+  end
+end
+
+keypad_print([5,8,4,129])
