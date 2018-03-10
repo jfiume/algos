@@ -358,7 +358,7 @@ def print_key(key, current_pos)
   value = key - current_pos
   if value > 0
     puts "right #{value}"
-  else
+  elsif value < 0
     puts "left #{-value}"
   end
 end
