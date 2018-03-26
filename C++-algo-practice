@@ -21,7 +21,6 @@ int main() {
 }
 
 // simpleArraySum
-// written in C++
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -102,7 +101,6 @@ vector<string> split_string(string input_string) {
 }
 
 // Input and Output
-// written in C++
 #include <cmath>
 #include <cstdio>
 #include <vector>
@@ -117,5 +115,23 @@ int main() {
     cin >> num1 >> num2 >> num3;
     sum = num1 + num2 + num3;
     cout << sum;
+    return 0;
+}
+
+
+// Basic Data Types
+#include <iostream>
+#include <cstdio>
+using namespace std;
+
+int main() {
+    // Complete the code.
+    int i;
+    long l;
+    char c;
+    float f;
+    double d;
+    scanf("%d %ld %c %f %lf", &i, &l, &c, &f, &d);
+    printf("%d\n%ld\n%c\n%.3f\n%.9lf\n", i, l, c, f, d);
     return 0;
 }
