@@ -210,3 +210,29 @@ int main() {
 
     return 0;
 }
+
+// Create Array
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int el;
+    int n;
+    cin >> n;
+    int arr[n];
+    for (int i=0; i < n; i++) {
+        cin >> el;
+        arr[i] = el;
+    }
+    while (n > 0) {
+        cout << arr[n-1] << " ";
+        n--;
+    }
+    return 0;
+}
