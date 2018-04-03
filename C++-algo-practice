@@ -318,3 +318,24 @@ vector<string> split_string(string input_string) {
     return splits;
 }
 
+// Strings
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+   // Complete the program
+    string a, b;
+    string a_prime, b_prime;
+    cin >> a >> b;
+    
+    int a_size = a.size();
+    int b_size = b.size();
+    a_prime = b[0] + a.substr(1, a_size - 1);
+    b_prime = a[0] + b.substr(1, b_size - 1);
+    
+    cout << a_size << " " << b_size << "\n";
+    cout << a + b << "\n";
+    cout << a_prime << " " << b_prime << "\n";
+    return 0;
+}
