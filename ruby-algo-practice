@@ -364,3 +364,59 @@ def print_key(key, current_pos)
 end
 
 keypad_print([5,8,4,129])
+
+
+# Compare the Triplets
+#!/bin/ruby
+
+#
+# Complete the solve function below.
+#
+def solve(a0, a1, a2, b0, b1, b2)
+    #
+    # Write your code here.
+    #
+    a = [a0, a1, a2]
+    b = [b0, b1, b2]
+    alice = 0
+    bob = 0
+    i = 0
+    
+    while i < 3
+        case a[i] <=> b[i]
+        when 1
+            alice += 1
+        when -1
+            bob += 1
+        end
+        i += 1
+    end
+    [alice, bob]  
+end
+
+fp = File.open(ENV['OUTPUT_PATH'], 'w')
+
+a0A1A2 = gets.rstrip.split
+
+a0 = a0A1A2[0].to_i
+
+a1 = a0A1A2[1].to_i
+
+a2 = a0A1A2[2].to_i
+
+b0B1B2 = gets.rstrip.split
+
+b0 = b0B1B2[0].to_i
+
+b1 = b0B1B2[1].to_i
+
+b2 = b0B1B2[2].to_i
+
+result = solve a0, a1, a2, b0, b1, b2
+
+fp.write result.join " "
+fp.write "\n"
+
+fp.close()
+
+
