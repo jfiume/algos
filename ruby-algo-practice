@@ -477,3 +477,25 @@ fp.write "\n"
 fp.close()
 
 
+#!/bin/ruby
+# Staircase
+#
+# Complete the staircase function below.
+#
+def staircase(n)
+    #
+    # Write your code here.
+    #
+    i = 1
+    n.times do 
+        (n - i).times {print " "}
+        i.times {print "#"}
+        print "\n"
+        i += 1
+    end
+end
+
+n = gets.to_i
+
+staircase n
+
