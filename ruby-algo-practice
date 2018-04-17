@@ -499,3 +499,26 @@ n = gets.to_i
 
 staircase n
 
+
+
+#!/bin/ruby
+
+# miniMaxSum
+# Complete the miniMaxSum function below.
+#
+def miniMaxSum(arr)
+    #
+    # Write your code here.
+    #
+    sums = []
+    i = 0
+    while i < arr.length
+        sums << (arr[0...i] + arr[i+1..-1]).reduce(:+)
+        i += 1
+    end
+    print "#{sums.min} #{sums.max}"
+end
+
+arr = gets.rstrip.split(' ').map(&:to_i)
+
+miniMaxSum arr
