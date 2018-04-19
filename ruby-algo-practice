@@ -522,3 +522,50 @@ end
 arr = gets.rstrip.split(' ').map(&:to_i)
 
 miniMaxSum arr
+
+
+#!/bin/ruby
+
+# Grading Students
+# Complete the gradingStudents function below.
+#
+def gradingStudents(grades)
+    #
+    # Write your code here.
+    #
+    new_grades = []
+    grades.each do |grade|
+        rounded_grade = next_multiple_5(grade)
+        if grade <= 40 - 3
+            new_grades << grade
+        elsif rounded_grade - grade < 3
+           new_grades << rounded_grade
+        else
+           new_grades << grade
+        end
+    end
+    new_grades.each {|grade| puts grade}
+end
+
+def next_multiple_5(num)
+    curr_multiple = num / 5
+    (curr_multiple + 1) * 5
+end
+
+fp = File.open(ENV['OUTPUT_PATH'], 'w')
+
+n = gets.to_i
+
+grades = Array.new(n)
+
+n.times do |grades_itr|
+    grades_item = gets.to_i
+    grades[grades_itr] = grades_item
+end
+
+result = gradingStudents grades
+
+fp.write result.join "\n"
+fp.write "\n"
+
+fp.close()
