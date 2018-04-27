@@ -614,3 +614,36 @@ s = gets.strip
 result = camelcase(s)
 puts result
 
+# Strong Password
+#!/bin/ruby
+require 'set'
+
+def minimumNumber(n, password)
+    numbers = "0123456789"
+    lower_case = "abcdefghijklmnopqrstuvwxyz"
+    upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    special_characters = "!@#$%^&*()-+"
+    # Return the minimum number of characters to make the password strong
+    set = Set.new
+    if n < 4
+        6 - n
+    else
+        password.each_char do |letter|
+            if numbers.index(letter)
+                set.add("numbers")
+            elsif lower_case.index(letter)
+                set.add("lower_case")
+            elsif upper_case.index(letter)
+                set.add("upper_case")
+            elsif special_characters.index(letter)
+                set.add("special_chars")
+            end
+        end
+        4 - set.length > 6 - n ? 4 - set.length : 6 - n
+    end
+end
+
+n = gets.strip.to_i
+password = gets.strip
+answer = minimumNumber(n, password)
+puts answer
