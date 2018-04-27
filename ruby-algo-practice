@@ -594,3 +594,23 @@ s = gets.strip
 result = super_reduced_string(s)
 puts result;
 
+
+#!/bin/ruby
+# CamelCase
+def camelcase(s)
+    # Complete this function
+    idx = 0
+    counter = 1
+    while idx < s.length
+        if s[idx].upcase == s[idx]
+            counter += 1
+        end
+        idx += 1
+    end
+    counter
+end
+
+s = gets.strip
+result = camelcase(s)
+puts result
+
