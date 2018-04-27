@@ -569,3 +569,28 @@ fp.write result.join "\n"
 fp.write "\n"
 
 fp.close()
+
+
+#!/bin/ruby
+
+def super_reduced_string(s)
+    # Complete this function
+    i = 0
+    j = 1
+    while j < s.length
+        if s[i] == s[j]
+            s = s[0...i] + s[j + 1..-1]
+            i = 0
+            j = 1
+        end
+        i += 1
+        j += 1
+    end
+    return "Empty String" if s.length == 0 || s[0] == s[1]
+    s
+end
+
+s = gets.strip
+result = super_reduced_string(s)
+puts result;
+
