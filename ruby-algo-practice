@@ -647,3 +647,24 @@ n = gets.strip.to_i
 password = gets.strip
 answer = minimumNumber(n, password)
 puts answer
+
+# Mars Exploration
+#!/bin/ruby
+
+def marsExploration(s)
+    # Complete this function
+    counter = 0
+    idx = 0
+    while idx + 2 < s.length
+        counter += 1 if s[idx] != "S"
+        counter += 1 if s[idx + 1] != "O"
+        counter += 1 if s[idx + 2] != "S"
+        idx += 3
+    end
+    counter
+end
+
+s = gets.strip
+result = marsExploration(s)
+puts result
+
