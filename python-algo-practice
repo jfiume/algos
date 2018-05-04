@@ -778,6 +778,4 @@ def Reverse(head):
     return new_head
     
     
-    
- 
  
