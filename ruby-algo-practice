@@ -668,3 +668,25 @@ s = gets.strip
 result = marsExploration(s)
 puts result
 
+
+# Definition for singly-linked list:
+# class ListNode
+#   attr_accessor :value, :next
+#   def initialize(val)
+#     @value = val
+#     @next = nil
+# end
+#
+def removeKFromList(l, k)
+    res = []
+    temp = l
+    while temp
+        unless temp.value == k
+            res << temp.value
+        end
+        temp = temp.next
+    end
+    
+    res
+end
+
