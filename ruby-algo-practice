@@ -730,3 +730,31 @@ def containsDuplicates(a)
 end
 
 
+def sumOfTwo(a, b, v)
+    pairs = {}
+    a_b = ""
+    if a.length > b.length
+        a_b << "a"
+        a.each do |el|
+            pairs[v - el] = el
+        end
+    else
+        a_b << "b"
+        b.each do |el|
+            pairs[v - el] = el
+        end
+    end
+    if a_b == "a"
+        b.each do |el|
+            return true if pairs[el]
+        end
+        false
+    else
+        a.each do |el|
+            return true if pairs[el]
+        end
+        false
+    end
+end
+
+
