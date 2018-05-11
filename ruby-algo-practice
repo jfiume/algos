@@ -720,3 +720,13 @@ def isListPalindrome(l)
 end
 
 
+
+def containsDuplicates(a)
+    hash = Hash.new(0)
+    a.each do |el|
+        hash[el] += 1
+    end
+    hash.values.any? {|v| v > 1}
+end
+
+
