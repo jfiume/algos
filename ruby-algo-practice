@@ -3,6 +3,7 @@ def replace(str)
   str.split(' ').join('%20')
 end
 
+
 # 2 strings are anagrams
 # 1st way to do it
 def anagrams?(str1, str2)
