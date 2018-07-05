@@ -823,3 +823,28 @@ end
 
 
 
+#!/bin/ruby
+
+require 'json'
+require 'stringio'
+
+
+
+n = gets.to_i
+
+arr = gets.rstrip.split(' ').map(&:to_i)
+def arr_reverse(arr)
+    idx1 = 0
+    idx2 = arr.length - 1
+    while idx1 < idx2
+        arr[idx1], arr[idx2] = arr[idx2], arr[idx1]
+        idx1 += 1
+        idx2 -= 1
+    end
+    
+    arr  
+end
+
+print arr_reverse(arr).join(" ")
+
+
