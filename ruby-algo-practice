@@ -804,3 +804,22 @@ class Person
         @age += 1
     end
 end
+
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = gets.chomp
+while s = gets.chomp
+    res1 = ""
+    res2 = ""
+    s.each_char.with_index do |char, idx|
+        if idx.even?
+            res1 << char
+        else
+            res2 << char
+        end
+    end
+    puts "#{res1} #{res2}"
+end
+
+
+
