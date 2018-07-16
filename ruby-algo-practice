@@ -847,4 +847,23 @@ end
 
 print arr_reverse(arr).join(" ")
 
+# Dictionaries and Maps
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+phone_book = {}
+n = gets.to_i
+n.times do |num|
+    num = gets.chomp.split(" ")
+    phone_book[num.first] = num.last.to_i
+end
+
+while name = gets.chomp
+    if !phone_book[name]
+        puts "Not found"
+    else
+        puts "#{name}=#{phone_book[name]}"
+    end
+end
+
+
+
 
