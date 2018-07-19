@@ -867,3 +867,26 @@ end
 
 
 
+#!/bin/ruby
+# Binary Numbers
+
+require 'json'
+require 'stringio'
+
+
+
+n = gets.to_i
+res = 0
+counts = 0
+binary = n.to_s(2)
+i = 0
+while i < binary.length
+    if binary[i] == '0'
+        counts = 0
+    else
+        counts += 1
+    end
+    res = counts if counts > res
+    i += 1
+end
+p res
